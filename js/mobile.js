@@ -25,7 +25,7 @@ const displaySearchResult = data => {
                 <h5 class="card-title">${data.brand}</h5>
                 <h6>${data.phone_name}</h6>
                 <p>${data.slug}</p>
-                <button)" type="button" class="btn btn-success">Explore</button>
+                <button type="button" class="btn btn-success">Explore</button>
             </div>
         </div>
         `;
@@ -33,3 +33,7 @@ const displaySearchResult = data => {
     })
 }
 
+// mobile details information
+const mobileDetails = mobileId => {
+    console.log(mobileId);
+}
