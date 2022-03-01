@@ -13,14 +13,29 @@ const searchMobile = () => {
 }
 
 const displaySearchResult = data => {
-    const searchResult = document.getElementById('search-result');
+    const notFound = document.getElementById('not-found');
+    notFound.innerHTML = '';
+    const searchResult = document.getElementById('search-result'); 
+        // Error handling for unavailable data    
+        if(!data.data){
+            // console.log('hellow')
+            const notFound = document.getElementById('not-found');
+            const p = document.createElement('p');
+            p.style.textAlign = 'center';
+            p.style.fontSize = '20px';
+            p.style.fontFamily = 'Hubballi, cursive';
+            p.style.padding = '5px 0';
+            p.innerText = 'Not Matched!';
+            notFound.appendChild(p);   
+        }
+
         searchResult.innerHTML = '';
     data.forEach(data => {
         // console.log(data);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100">
+        <div class="card h-100 rounded">
             <img src="${data.image}" class="card-img-top w-75 mx-auto p-3" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${data.brand}</h5>
@@ -31,7 +46,9 @@ const displaySearchResult = data => {
         </div>
         `;
         searchResult.appendChild(div);
+        notFound.innerHTML = '';
     })
+    
 }
 
 // mobile details information
@@ -44,7 +61,7 @@ const mobileDetails = mobileId => {
 }
     // creat card and display more information
     const displayMobileDetails = mobile => {
-        console.log(mobile);
+    console.log(mobile);
     const mobileDetail = document.getElementById('mobile-detail');
     const div = document.createElement('div');
     div.classList.add('card');
