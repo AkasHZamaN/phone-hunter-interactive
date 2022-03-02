@@ -4,3 +4,10 @@ body{
     font-family: 'Hubballi', cursive;
     background-color: #fff9f9;
 }
+.custom-body{
+    background-color: #4ca369;
+    border-radius: 25px;
+    color: white;
+    margin: 5px ;
+    opacity: .90;
+}

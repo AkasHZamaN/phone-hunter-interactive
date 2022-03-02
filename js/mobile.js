@@ -9,16 +9,21 @@ const searchMobile = () => {
 
     fetch(url)
     .then(res => res.json())
-    .then(data => displaySearchResult(data.data))
+    .then(data => displaySearchResult(data.data.slice(0, 20)))
 }
 
 const displaySearchResult = data => {
+    
+    for (const items of data){
+        // console.log(items);
+    }
+
     const notFound = document.getElementById('not-found');
     notFound.innerHTML = '';
     const searchResult = document.getElementById('search-result'); 
         // Error handling for unavailable data    
         if(!data.data){
-            // console.log('hellow')
+            // console.log(data);
             const notFound = document.getElementById('not-found');
             const p = document.createElement('p');
             p.style.textAlign = 'center';
@@ -30,8 +35,8 @@ const displaySearchResult = data => {
         }
 
         searchResult.innerHTML = '';
-    data.forEach(data => {
-        // console.log(data);
+        data.forEach(data => {
+            
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -47,8 +52,7 @@ const displaySearchResult = data => {
         `;
         searchResult.appendChild(div);
         notFound.innerHTML = '';
-    })
-    
+    })    
 }
 
 // mobile details information
@@ -67,7 +71,7 @@ const mobileDetails = mobileId => {
     div.classList.add('card');
     div.innerHTML = `
     <img src="${mobile.image}" class="card-img-top w-75 p-3 mx-auto" alt="...">
-    <div class="card-body">
+    <div class="card-body custom-body">
         <h5 class="card-title fw-bold">${mobile.brand}</h5>
         <p class="card-title fs-4">${mobile.slug}</p>
 
