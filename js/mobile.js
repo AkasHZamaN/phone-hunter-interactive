@@ -70,7 +70,7 @@ const displayMobileDetails = mobile => {
                 <p></p>
                 <h6 class="card-title fs-5"><span class="fw-bold fs-5">Released:</span> ${mobile.releaseDate ? mobile.releaseDate : 'Not Found!'}</h6>
 
-                <hr class="w-75 mx-auto border border-1 border-success opacity-75 rounded">
+                <hr class="w-75 mx-auto border border border-white opacity-75 rounded">
 
                 <h6 class="card-title fw-bold fs-5">Main Features:</h6>
                 <h6 class="card-title fs-5"><span class="fw-bold fs-5">chipSet:</span> ${mobile.mainFeatures.chipSet}</h6>
@@ -79,7 +79,7 @@ const displayMobileDetails = mobile => {
                 <h6 class="card-title fs-5"><span class="fw-bold fs-5">storage:</span> ${mobile.mainFeatures.storage}</h6>
                 <h6 class="card-title fs-5"><span class="fw-bold fs-5">sensors:</span> ${mobile.mainFeatures.sensors}</h6>
 
-                <hr class="w-75 mx-auto border border-1 border-success opacity-75 rounded">
+                <hr class="w-75 mx-auto border border border-white opacity-75 rounded">
 
                 <h6 class="card-title fw-bold fs-5">Others:</h6>
                 <h6 class="card-title fs-5"><span class="fw-bold fs-5">Bluetooth:</span> ${mobile.others?.Bluetooth ? mobile.others?.Bluetooth : 'Not Found!'}</h6>
